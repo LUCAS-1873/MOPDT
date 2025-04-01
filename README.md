@@ -1,3 +1,4 @@
-# MOPDT
-Methane-oxidation protein detector
-![Uploading Logo.jpg…]()
+![](./Logo.jpg)
+
+# Methane-Oxidation Protein/Gene DetecTor (MOPDT)
+
