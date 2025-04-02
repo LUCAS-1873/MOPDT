@@ -12,16 +12,18 @@ Firstly, you need to install **ifeature**. MOPDT is dependent on it.
 # With mamba, you will create an environment for MOPDT and activate it before being able to use it.
 mamba create -n MOPDT python==3.7 -y
 mamba activate MOPDT
-
-# Next, you will install the iFeatureOmegaCLI(version) python enviroment.
+```
+Next, you will install the iFeatureOmegaCLI(version) python environment.
+```
 mamba create -n MOPDT python==3.7.12 -y
 mamba activate MOPDT
 pip3 install iFeatureOmegaCLI==1.0.2
 pip3 install biopython==1.81
 pip3 install rdkit==2023.3.2
 pip3 install xgboost==1.6.2
-
-# Next, install dependent softwares 
+```
+Next, install dependent software 
+```
 mamba install diamond==2.0.2 -y -c bioconda
 mamba install prodigal==2.6.3 -y -c bioconda
 mamba install seqkit==2.3.0 -y -c bioconda
@@ -29,7 +31,7 @@ mamba install hmmer==3.3.1 -y -c bioconda
 ```
 
 ### Step 2. Download the database of MOPDT
-You can download database through https://zenodo.org/records/## .
+You can download the database through https://zenodo.org/records/## .
 
 ### Step 3. Download the main software of MOPDT
 ```
@@ -39,9 +41,10 @@ git clone https://github.com/LUCAS-1873/MOPDT/
 ## Usage
 
 ##### MOPDT.py -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes
-##### MOPDT-Abun.py -The tool can help to
+##### MOPDT-Abun.sh -The script can help to rapidly estimate  Methane-Oxidation Gene Relative abundance from raw reads file
 
 #### Quickly start
+##### MOPDT
 Input protein file and then output
 `MOPDT.py -I Input.faa -O Output`
 "Input.faa" is the protein file that you want to know if these proteins are Methane-oxidation proteins.
@@ -54,42 +57,25 @@ Add '--nucl' MOPDT will perform gene calling first.
 "Output" is the directory in which the results which stored
 
 Also, you can use '-j' to make MOPDT use multi-threads to speed up
-`MOPDT.py --nucl -j 100 -I Input.fa -O Output `
+`MOPDT.py --nucl -j 100 -I Input.fa -O Output`
+##### MOPDT-Abun
+Usage: MOPDT-Abun.sh output threads x1.fq/fa x2.fq/fa
 
+Input with single-read Fastq/Fasta file with 100 threads to output_dir
+Fastq:
+`MOPDT-Abun.sh output_dir 100 single.fq`
+Fasta:
+`MOPDT-Abun.sh output_dir 100 single.fa`
 
+MOPDT-Abun support pair reads input with 100 threads to output_dir
+`MOPDT-Abun.sh output_dir 100 r1.fq r2.fq`
+**Make sure the two files with the same header**
 
-```
-MOPDT.py [-h] -I FASTA -O OUT_DIR [-j THREAD] [-L LEVEL] [--nucl]
-                [--intermediate] [--genome] [--no_check] [--version]
-
-MOPDT: Methane-oxidation protein Detector
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -I FASTA              The input sequence, required in fasta format, the
-                        default is protein sequence; if the input is a nucleic acid
-                        sequence, add --nucl
-  -O OUT_DIR            Directory to write output files
-  -j THREAD, --thread THREAD
-                        Number of threads/processes
-  -L LEVEL, --level LEVEL
-                        Select the degree of Strictness; You can input
-                        loose|strict|default
-  --nucl                set this to tell MOPDT the input file is a nucleic acid
-                        sequence, the default is False, If this is set, MOPDT will
-                        auto-gene call using prodigal.
-  --intermediate        Whether remain the intermediate files, the default is
-                        False.
-  --genome              Set this to tell MOPDT the input file is the genome of
-                        complete/draft bacteria; set this only affect gene
-                        calling from prodigal
-  --no_check            Set this to skip the check procedure, not recommend,
-                        only if you have run with other protein annotation
-                        steps with such as eggNOG/Prokka...; And use MOPDT to
-                        explore the potential MOP further.
-  --version             show the program's version number and exit
-```
 -----------------
 Depending on the tools used, you may want to cite also:  
-DIAMOND: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.  
-SEQKIT: Shen W, Le S, Li Y, et al. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation[J]. PloS one, 2016, 11(10): e0163962.  
+Diamond: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.  
+Seqkit: Shen W, Le S, Li Y, et al. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation[J]. PloS one, 2016, 11(10): e0163962.   
+HMMER: Finn, R. D., Clements, J., & Eddy, S. R. (2011). HMMER web server: interactive sequence similarity searching. Nucleic acids research, 39(suppl_2), W29-W37.  
+iFeatureOmega: Chen, Z., Liu, X., Zhao, P., Li, C., Wang, Y., Li, F., ... & Song, J. (2022). iFeatureOmega: an integrative platform for engineering, visualization and analysis of features from molecular sequences, structural and ligand data sets. Nucleic acids research, 50(W1), W434-W447.  
+Prodigal: Hyatt, D., Chen, G. L., LoCascio, P. F., Land, M. L., Larimer, F. W., & Hauser, L. J. (2010). Prodigal: prokaryotic gene recognition and translation initiation site identification. BMC bioinformatics, 11, 1-11.  
+
