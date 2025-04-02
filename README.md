@@ -4,6 +4,7 @@
 It includes MOPDT and MOPDT-Abun. *MOPDT* is a Pipeline for the Rapid Prediction of Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes.  And *MOPDT-Abun* is a supplementary tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq format.
 
 ## Installation
+### Step 1. Install dependent softwares
 We suggest using mamba instead of conda to speed up the installation.
 
 Firstly, you need to install **ifeature**. MOPDT is dependent on it.
@@ -27,11 +28,19 @@ mamba install seqkit==2.3.0 -y -c bioconda
 mamba install hmmer==3.3.1 -y -c bioconda
 ```
 
-Downloading MAIN software and the database of MOPDT
+### Step 2. Download the database of MOPDT
+You can download database through https://zenodo.org/records/## .
+
+### Step 3. Download the main software of MOPDT
+```
+git clone https://github.com/LUCAS-1873/MOPDT/
+```
+
+## Usage
 
 
-geNomad depends on a database that contains the profiles of the markers that are used to classify sequences, their taxonomic information, their functional annotation, etc. So, you should first download the database to your current directory:
+
 -----------------
-Depending on the tools used, you may want to cite also:
-DIAMOND: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.
-SEQKIT: Shen W, Le S, Li Y, et al. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation[J]. PloS one, 2016, 11(10): e0163962.
+Depending on the tools used, you may want to cite also:  
+DIAMOND: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.  
+SEQKIT: Shen W, Le S, Li Y, et al. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation[J]. PloS one, 2016, 11(10): e0163962.  
