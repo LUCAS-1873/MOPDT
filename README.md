@@ -41,12 +41,8 @@ git clone https://github.com/LUCAS-1873/MOPDT/
 ```
 
 ## Usage
-
-**MOPDT.py** -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes  
-**MOPDT-Abun.sh** -The script can help to rapidly estimate  Methane-Oxidation Gene Relative abundance from raw reads file
-
 ### Quickly start
-##### MOPDT
+#### MOPDT
 Input protein file and then output  
 ```
 MOPDT.py -I Input.faa -O Output
@@ -67,7 +63,7 @@ Also, you can use '-j' to make MOPDT use multi-threads to speed up
 MOPDT.py --nucl -j 100 -I Input.fa -O Output
 ```  
 
-##### MOPDT-Abun  
+#### MOPDT-Abun  
 Usage: MOPDT-Abun.sh output threads x1.fq/fa x2.fq/fa  
 
 Input with single-read Fastq/Fasta file with 100 threads to output_dir  
