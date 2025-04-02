@@ -6,7 +6,7 @@ It includes **MOPDT** and **MOPDT-Abun**.
 **MOPDT-Abun** is a tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq/Fasta format.
 
 ## Installation
-### Step 1. Install dependent softwares
+### Step 1. Install dependent software
 We suggest using mamba instead of conda to speed up the installation.
 
 Firstly, you need to create a unique MOPDT mamba/conda environment.
@@ -15,7 +15,7 @@ Firstly, you need to create a unique MOPDT mamba/conda environment.
 mamba create -n MOPDT python==3.7 -y
 mamba activate MOPDT
 ```
-Next, you will install the iFeatureOmegaCLI and other python environments.
+Next, you will install the iFeatureOmegaCLI and other Python environments.
 ```
 mamba create -n MOPDT python==3.7.12 -y
 mamba activate MOPDT
@@ -30,6 +30,7 @@ mamba install diamond==2.0.2 -y -c bioconda
 mamba install prodigal==2.6.3 -y -c bioconda
 mamba install seqkit==2.3.0 -y -c bioconda
 mamba install hmmer==3.3.1 -y -c bioconda
+mamba install parallel==20250222 -y
 ```
 
 ### Step 2. Download the main software of MOPDT
@@ -38,13 +39,15 @@ git clone https://github.com/LUCAS-1873/MOPDT.git
 cd MOPDT
 chmod +x MOPDT-Abun.sh
 chmod +x MOPDT-Abun.py
-
+#create link
+ln -s `realpath MOPDT.py` ${CONDA_PREFIX}/bin/
+ln -s `realpath MOPDT.sh` ${CONDA_PREFIX}/bin/
 #Now, you can check the tool running
-./MOPDT.py --help
+MOPDT.py --help
 ```
 
 ### Step 3. Download the database of MOPDT
-You can download the database through https://zenodo.org/records/15124190.
+You can download the database through https://zenodo.org/records/15124190  
 Next, put the downloaded file in the MOPDT directory in Step 2 and decompress it 
 ```
 tar zxvf DB_0.0.1.tar.gz
@@ -70,8 +73,8 @@ Input protein file and then output
 ```
 MOPDT.py -I Input.faa -O Output
 ```  
-"Input.faa" is the protein file that you want to know if these proteins are Methane-oxidation proteins.  
-"Output" is the directory in which the results which stored  
+"Input.faa" is the protein file you want to know if these proteins are Methane-oxidation proteins.  
+"Output" is the directory in which the results are stored  
 
 Input nucleic acid file and then output  
 ```
@@ -79,12 +82,24 @@ MOPDT.py --nucl -I Input.fa -O Output
 ```  
 Add '--nucl' MOPDT will perform gene calling first.  
 "Input.fa" is the nucleic acid sequencing file that you want to know if the genes coding by these nucleic acid sequences are Methane-oxidation Genes.  
-"Output" is the directory in which the results which stored  
+"Output" is the directory in which the results are stored  
 
 Also, you can use '-j' to make MOPDT use multi-threads to speed up  
 ```
 MOPDT.py --nucl -j 100 -I Input.fa -O Output
 ```  
+
+#### Understanding the outputs
+In this example, the results of MOPDT's analysis will be written to the Output directory, which will look like this:
+```
+Output
+├── All_detect_level_from_MOPDT.txt
+├── MOP_detect.faa
+├── MOP_info_from_MOPDT.txt
+├── calling_pro2conitg.txt
+└── calling_pro.faa
+```
+
 
 #### MOPDT-Abun  
 Usage: MOPDT-Abun.sh output threads x1.fq/fa x2.fq/fa  
