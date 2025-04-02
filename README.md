@@ -1,8 +1,9 @@
 ![](./Logo.jpg)
 
 # Methane-Oxidation Protein/Gene DetecTor (MOPDT)
-It includes MOPDT and MOPDT-Abun. *MOPDT* is a Pipeline for the Rapid Prediction of Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes.    
-And *MOPDT-Abun* is a supplementary tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq format.
+It includes **MOPDT** and **MOPDT-Abun**.   
+**MOPDT** is a Pipeline for the Rapid Prediction of Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes.    
+**MOPDT-Abun** is a tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq/Fasta format.
 
 ## Installation
 ### Step 1. Install dependent softwares
