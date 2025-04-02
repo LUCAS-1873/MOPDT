@@ -19,6 +19,7 @@ pip3 install iFeatureOmegaCLI==1.0.2
 pip3 install biopython==1.81
 pip3 install rdkit==2023.3.2
 pip3 install xgboost==1.6.2
+
 # Next, install dependent softwares 
 mamba install diamond==2.0.2 -y -c bioconda
 mamba install prodigal==2.6.3 -y -c bioconda
