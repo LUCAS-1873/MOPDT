@@ -38,27 +38,23 @@ git clone https://github.com/LUCAS-1873/MOPDT/
 
 ## Usage
 
-### MOPDT.py -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes
-### MOPDT-Abun.py -The tool can help to
+##### MOPDT.py -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes
+##### MOPDT-Abun.py -The tool can help to
 
 #### Quickly start
-```
-## Input protein file and then output
-MOPDT.py -I Input.faa -O Output
-# "Input.faa" is the protein file that you want to know if these proteins are Methane-oxidation proteins.
-# "Output" is the directory in which the results which stored
-```
-```
-## Input nucleic acid file and then output
-MOPDT.py --nucl -I Input.fa -O Output
-# Add '--nucl' MOPDT will perform gene calling first.
-# "Input.fa" is the nucleic acid sequencing file that you want to know if the genes coding by these nucleic acid sequence are Methane-oxidation Genes.
-# "Output" is the directory in which the results which stored
-```
-```
-# Also, you can use '-j' to make MOPDT use multi-threads to speed up
-MOPDT.py --nucl -j 100 -I Input.fa -O Output 
-```
+Input protein file and then output
+`MOPDT.py -I Input.faa -O Output`
+"Input.faa" is the protein file that you want to know if these proteins are Methane-oxidation proteins.
+"Output" is the directory in which the results which stored
+
+Input nucleic acid file and then output
+`MOPDT.py --nucl -I Input.fa -O Output`
+Add '--nucl' MOPDT will perform gene calling first.
+"Input.fa" is the nucleic acid sequencing file that you want to know if the genes coding by these nucleic acid sequence are Methane-oxidation Genes.
+"Output" is the directory in which the results which stored
+
+Also, you can use '-j' to make MOPDT use multi-threads to speed up
+`MOPDT.py --nucl -j 100 -I Input.fa -O Output `
 
 
 
