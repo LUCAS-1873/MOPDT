@@ -70,14 +70,20 @@ MOPDT.py --nucl -j 100 -I Input.fa -O Output
 Usage: MOPDT-Abun.sh output threads x1.fq/fa x2.fq/fa  
 
 Input with single-read Fastq/Fasta file with 100 threads to output_dir  
-Fastq:  
-`MOPDT-Abun.sh output_dir 100 single.fq`  
-Fasta:  
-`MOPDT-Abun.sh output_dir 100 single.fa`  
+```
+#Fastq:
+MOPDT-Abun.sh output_dir 100 single.fq
 
-MOPDT-Abun support pair reads input with 100 threads to output_dir  
-`MOPDT-Abun.sh output_dir 100 r1.fq r2.fq`  
+#Fasta:
+MOPDT-Abun.sh output_dir 100 single.fa
+```  
+
+MOPDT-Abun support pair reads input with 100 threads to output_dir    
 **Make sure the two files with the same header**  
+```
+MOPDT-Abun.sh output_dir 100 r1.fq r2.fq
+```  
+
 
 -----------------
 Depending on the tools used, you may want to cite also: 
