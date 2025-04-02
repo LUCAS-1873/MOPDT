@@ -28,4 +28,10 @@ mamba install hmmer==3.3.1 -y -c bioconda
 ```
 
 Downloading MAIN software and the database of MOPDT
+
+
 geNomad depends on a database that contains the profiles of the markers that are used to classify sequences, their taxonomic information, their functional annotation, etc. So, you should first download the database to your current directory:
+-----------------
+Depending on the tools used, you may want to cite also:
+DIAMOND: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.
+SEQKIT: Shen W, Le S, Li Y, et al. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation[J]. PloS one, 2016, 11(10): e0163962.
