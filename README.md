@@ -38,8 +38,61 @@ git clone https://github.com/LUCAS-1873/MOPDT/
 
 ## Usage
 
+### MOPDT.py -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes
+### MOPDT-Abun.py -The tool can help to
+
+#### Quickly start
+```
+## Input protein file and then output
+MOPDT.py -I Input.faa -O Output
+# "Input.faa" is the protein file that you want to know if these proteins are Methane-oxidation proteins.
+# "Output" is the directory in which the results which stored
+```
+```
+## Input nucleic acid file and then output
+MOPDT.py --nucl -I Input.fa -O Output
+# Add '--nucl' MOPDT will perform gene calling first.
+# "Input.fa" is the nucleic acid sequencing file that you want to know if the genes coding by these nucleic acid sequence are Methane-oxidation Genes.
+# "Output" is the directory in which the results which stored
+```
+```
+# Also, you can use '-j' to make MOPDT use multi-threads to speed up
+MOPDT.py --nucl -j 100 -I Input.fa -O Output 
+```
 
 
+
+```
+MOPDT.py [-h] -I FASTA -O OUT_DIR [-j THREAD] [-L LEVEL] [--nucl]
+                [--intermediate] [--genome] [--no_check] [--version]
+
+MOPDT: Methane-oxidation protein Detector
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -I FASTA              The input sequence, required in fasta format, the
+                        default is protein sequence; if the input is a nucleic acid
+                        sequence, add --nucl
+  -O OUT_DIR            Directory to write output files
+  -j THREAD, --thread THREAD
+                        Number of threads/processes
+  -L LEVEL, --level LEVEL
+                        Select the degree of Strictness; You can input
+                        loose|strict|default
+  --nucl                set this to tell MOPDT the input file is a nucleic acid
+                        sequence, the default is False, If this is set, MOPDT will
+                        auto-gene call using prodigal.
+  --intermediate        Whether remain the intermediate files, the default is
+                        False.
+  --genome              Set this to tell MOPDT the input file is the genome of
+                        complete/draft bacteria; set this only affect gene
+                        calling from prodigal
+  --no_check            Set this to skip the check procedure, not recommend,
+                        only if you have run with other protein annotation
+                        steps with such as eggNOG/Prokka...; And use MOPDT to
+                        explore the potential MOP further.
+  --version             show the program's version number and exit
+```
 -----------------
 Depending on the tools used, you may want to cite also:  
 DIAMOND: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.  
