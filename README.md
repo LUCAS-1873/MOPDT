@@ -99,6 +99,9 @@ Output
 ├── calling_pro2conitg.txt
 └── calling_pro.faa
 ```
+`MOP_info_from_MOPDT.txt` summarizes the results that contain all methane-oxidation genes. **If NO methane-oxidation gene is detected, there will be no this file**  
+`MOP_detect.faa` all methane-oxidation proteins. **If NO methane-oxidation gene is detected, there will be no this file**  
+
 
 
 #### MOPDT-Abun  
