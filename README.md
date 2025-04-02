@@ -32,13 +32,36 @@ mamba install seqkit==2.3.0 -y -c bioconda
 mamba install hmmer==3.3.1 -y -c bioconda
 ```
 
-### Step 2. Download the database of MOPDT
-You can download the database through https://zenodo.org/records/## .
+### Step 2. Download the main software of MOPDT
+```
+git clone https://github.com/LUCAS-1873/MOPDT.git
+cd MOPDT
+chmod +x MOPDT-Abun.sh
+chmod +x MOPDT-Abun.py
 
-### Step 3. Download the main software of MOPDT
+#Now, you can check the tool running
+./MOPDT.py --help
 ```
-git clone https://github.com/LUCAS-1873/MOPDT/
+
+### Step 3. Download the database of MOPDT
+You can download the database through https://zenodo.org/records/15124190.
+Next, put the downloaded file in the MOPDT directory in Step 2 and decompress it 
 ```
+tar zxvf DB_0.0.1.tar.gz
+rm DB_0.0.1.tar.gz
+```
+
+The correct structure of it should be:
+```
+├── DB
+├── lib
+├── Logo.jpg
+├── MOPDT-Abun.sh
+├── MOPDT.py
+└── README.md
+```
+
+
 
 ## Usage
 ### Quickly start
