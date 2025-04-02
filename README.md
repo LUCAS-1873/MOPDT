@@ -1,7 +1,8 @@
 ![](./Logo.jpg)
 
 # Methane-Oxidation Protein/Gene DetecTor (MOPDT)
-It includes MOPDT and MOPDT-Abun. *MOPDT* is a Pipeline for the Rapid Prediction of Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes.  And *MOPDT-Abun* is a supplementary tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq format.
+It includes MOPDT and MOPDT-Abun. *MOPDT* is a Pipeline for the Rapid Prediction of Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes.    
+And *MOPDT-Abun* is a supplementary tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq format.
 
 ## Installation
 ### Step 1. Install dependent softwares
@@ -40,24 +41,30 @@ git clone https://github.com/LUCAS-1873/MOPDT/
 
 ## Usage
 
-**MOPDT.py** -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes
+**MOPDT.py** -The main software to predict Methane-Oxidation Protein/Gene in Prokaryotic Genomes and Metagenomes  
 **MOPDT-Abun.sh** -The script can help to rapidly estimate  Methane-Oxidation Gene Relative abundance from raw reads file
 
 ### Quickly start
 ##### MOPDT
 Input protein file and then output  
-`MOPDT.py -I Input.faa -O Output`  
+```
+MOPDT.py -I Input.faa -O Output
+```  
 "Input.faa" is the protein file that you want to know if these proteins are Methane-oxidation proteins.  
 "Output" is the directory in which the results which stored  
 
 Input nucleic acid file and then output  
-`MOPDT.py --nucl -I Input.fa -O Output`  
+```
+MOPDT.py --nucl -I Input.fa -O Output
+```  
 Add '--nucl' MOPDT will perform gene calling first.  
 "Input.fa" is the nucleic acid sequencing file that you want to know if the genes coding by these nucleic acid sequences are Methane-oxidation Genes.  
 "Output" is the directory in which the results which stored  
 
 Also, you can use '-j' to make MOPDT use multi-threads to speed up  
-`MOPDT.py --nucl -j 100 -I Input.fa -O Output`  
+```
+MOPDT.py --nucl -j 100 -I Input.fa -O Output
+```  
 
 ##### MOPDT-Abun  
 Usage: MOPDT-Abun.sh output threads x1.fq/fa x2.fq/fa  
@@ -74,9 +81,7 @@ MOPDT-Abun support pair reads input with 100 threads to output_dir
 
 -----------------
 Depending on the tools used, you may want to cite also: 
-
-
-Diamond: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.    
+> Diamond: Buchfink B, Xie C, Huson D H. Fast and sensitive protein alignment using DIAMOND[J]. Nature methods, 2015, 12(1): 59-60.    
 Seqkit: Shen W, Le S, Li Y, et al. SeqKit: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation[J]. PloS one, 2016, 11(10): e0163962.     
 HMMER: Finn, R. D., Clements, J., & Eddy, S. R. (2011). HMMER web server: interactive sequence similarity searching. Nucleic acids research, 39(suppl_2), W29-W37.    
 iFeatureOmega: Chen, Z., Liu, X., Zhao, P., Li, C., Wang, Y., Li, F., ... & Song, J. (2022). iFeatureOmega: an integrative platform for engineering, visualization and analysis of features from molecular sequences, structural and ligand data sets. Nucleic acids research, 50(W1), W434-W447.    
