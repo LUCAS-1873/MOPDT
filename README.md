@@ -6,7 +6,7 @@ It includes **MOPDT** and **MOPDT-Abun**.
 **MOPDT-Abun** is a tool of MOPDT to quickly estimate the Methane-Oxidation Gene abundance with input Fastq/Fasta format.
 
 ## Installation
-### Step 1. Install dependent software
+### * Step 1. Install dependent software
 We suggest using mamba instead of conda to speed up the installation.
 
 Firstly, you need to create a unique MOPDT mamba/conda environment.
@@ -33,7 +33,7 @@ mamba install hmmer==3.3.1 -y -c bioconda
 mamba install parallel==20250222 -y
 ```
 
-### Step 2. Download the main software of MOPDT
+### * Step 2. Download the main software of MOPDT
 ```
 git clone https://github.com/LUCAS-1873/MOPDT.git
 cd MOPDT
@@ -46,7 +46,7 @@ ln -s `realpath MOPDT.sh` ${CONDA_PREFIX}/bin/
 MOPDT.py --help
 ```
 
-### Step 3. Download the database of MOPDT
+### * Step 3. Download the database of MOPDT
 You can download the database through https://zenodo.org/records/15124190  
 Next, put the downloaded file in the MOPDT directory in Step 2 and decompress it 
 ```
