@@ -89,7 +89,7 @@ Also, you can use '-j' to make MOPDT use multi-threads to speed up
 MOPDT.py --nucl -j 100 -I Input.fa -O Output
 ```  
 
-#### Understanding the outputs
+### Understanding the outputs
 In this example, the results of MOPDT's analysis will be written to the Output directory, which will look like this:
 ```
 Output
