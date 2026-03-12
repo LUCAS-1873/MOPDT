@@ -1,8 +1,6 @@
 ![](./Logo.jpg)
 
 
-#### How to cite this tool ordatabase?
-Zhao, Y., Chen, H., Huang, J. et al. The gut methanotroph Methylocystis intestini modulates intestinal peristalsis and fat metabolism via reducing methane levels. Nat Commun 17, 2 (2026). https://doi.org/10.1038/s41467-025-66596-w
 
 # Methane-Oxidation Protein/Gene DetecTor (MOPDT)
 It includes **MOPDT** and **MOPDT-Abun**.   
@@ -126,6 +124,8 @@ MOPDT-Abun support pair reads input with 100 threads to output_dir
 MOPDT-Abun.sh output_dir 100 r1.fq r2.fq
 ```  
 
+### How to cite this tool ordatabase?
+Zhao, Y., Chen, H., Huang, J. et al. The gut methanotroph Methylocystis intestini modulates intestinal peristalsis and fat metabolism via reducing methane levels. Nat Commun 17, 2 (2026). https://doi.org/10.1038/s41467-025-66596-w
 
 -----------------
 Depending on the tools used, you may want to cite also: 
